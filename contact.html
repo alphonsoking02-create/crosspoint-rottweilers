@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Inquiry | Crosspoint Rottweilers</title>
+  <meta name="description" content="Submit an inquiry to Crosspoint Rottweilers. We place selectively with serious homes that value structure, temperament, and quality. Begin the conversation today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Crosspoint</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dogs.html">Our Dogs</a>
+        <a href="litters.html">Litters</a>
+        <a href="about.html">The Program</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="dogs.html">Our Dogs</a>
+    <a href="litters.html">Litters</a>
+    <a href="about.html">The Program</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- INTERIOR HERO -->
+  <section class="hero-interior" style="background-image: url('images/hero-contact.jpg');">
+    <div class="hero-content">
+      <span class="eyebrow">Begin the Conversation</span>
+      <h1>Contact Crosspoint</h1>
+      <p>Every placement starts with an inquiry. If our program aligns with what you're looking for, we'd like to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="contact-split animate">
+
+        <!-- LEFT: Contact Info -->
+        <div class="contact-info">
+          <span class="eyebrow">Inquiries</span>
+          <h2>Start the Conversation</h2>
+          <div class="divider divider-left"></div>
+          <p>Thank you for your interest in Crosspoint Rottweilers. We take every inquiry seriously and evaluate each one individually based on experience, environment, and alignment with our placement standards.</p>
+          <p>Submitting an inquiry does not guarantee placement. It begins a conversation — and we believe the best placements start with honest communication on both sides.</p>
+
+          <div class="mt-5">
+            <div class="contact-detail">
+              <h4>Email</h4>
+              <!-- REPLACE: Update email address -->
+              <p><a href="mailto:info@crosspointrottweilers.com" style="color: var(--cp-ivory);">info@crosspointrottweilers.com</a></p>
+            </div>
+            <div class="contact-detail">
+              <h4>Location</h4>
+              <!-- REPLACE: Update location if desired -->
+              <p>United States</p>
+            </div>
+            <div class="contact-detail">
+              <h4>Response Time</h4>
+              <p>3–5 business days</p>
+            </div>
+            <div class="contact-detail">
+              <h4>Follow Us</h4>
+              <div class="footer-social" style="margin-top: 0.5rem;">
+                <!-- REPLACE: Update social media URLs -->
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Inquiry Form -->
+        <div>
+          <!-- TODO: Connect this form to your form handler -->
+          <!-- Options: Formspree (formspree.io), Netlify Forms, or custom backend -->
+          <!-- For Formspree: change action to "https://formspree.io/f/YOUR_FORM_ID" and method to "POST" -->
+          <form id="inquiry-form" action="#" method="POST">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First Name *</label>
+                <input class="form-input" type="text" id="first-name" name="first_name" required placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last Name *</label>
+                <input class="form-input" type="text" id="last-name" name="last_name" required placeholder="Your last name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input class="form-input" type="email" id="email" name="email" required placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number *</label>
+                <input class="form-input" type="tel" id="phone" name="phone" required placeholder="(000) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="city">City *</label>
+                <input class="form-input" type="text" id="city" name="city" required placeholder="Your city">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="state">State *</label>
+                <input class="form-input" type="text" id="state" name="state" required placeholder="Your state">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="referral">How did you hear about Crosspoint?</label>
+              <input class="form-input" type="text" id="referral" name="referral" placeholder="Instagram, referral, search, etc.">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="experience">Have you owned a Rottweiler before? *</label>
+              <select class="form-select" id="experience" name="experience" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="yes">Yes — currently own or have owned</option>
+                <option value="other-breeds">No — but experienced with other breeds</option>
+                <option value="first-time">No — this would be my first dog / first large breed</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="living">What is your living situation? *</label>
+              <select class="form-select" id="living" name="living_situation" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="house-yard">House with fenced yard</option>
+                <option value="house-no-fence">House without fenced yard</option>
+                <option value="apartment">Apartment or condo</option>
+                <option value="rural">Rural property / acreage</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="purpose">Primary purpose for your Rottweiler? *</label>
+              <select class="form-select" id="purpose" name="purpose" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="family">Family companion</option>
+                <option value="show">Show / conformation</option>
+                <option value="sport">Sport / working (IPO, Schutzhund, etc.)</option>
+                <option value="protection">Personal protection</option>
+                <option value="breeding">Breeding prospect</option>
+                <option value="multiple">Multiple purposes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="other-pets">Do you have other pets? If so, please describe.</label>
+              <input class="form-input" type="text" id="other-pets" name="other_pets" placeholder="Species, breed, age, etc.">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="litter-interest">Interested in a specific litter or pairing?</label>
+              <select class="form-select" id="litter-interest" name="litter_interest">
+                <option value="" disabled selected>Select one</option>
+                <!-- REPLACE: Update with your actual current/planned litters -->
+                <option value="hercules-mila">Hercules × Mila (Summer 2026)</option>
+                <option value="rumpi-mila">Rumpi × Mila (Fall 2026)</option>
+                <option value="future">Future litter / general interest</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="additional">Anything else you'd like us to know?</label>
+              <textarea class="form-textarea" id="additional" name="additional_info" rows="5" placeholder="Tell us about your experience, your home, or what you're looking for in a Rottweiler."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+
+            <p style="font-size: 0.8rem; color: rgba(234,226,214,0.4); margin-top: 1.5rem; text-align: center;">Crosspoint Rottweilers are placed — not sold. We reserve the right to decline any inquiry that does not align with our placement standards.</p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section section-dark">
+    <div class="container-narrow">
+      <div class="text-center animate">
+        <span class="eyebrow">After You Inquire</span>
+        <h2>What to Expect</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="grid-3 mt-5 animate animate-stagger">
+        <div class="text-center">
+          <h4 class="text-gold mb-2">01</h4>
+          <p>We review your inquiry and respond within 3–5 business days.</p>
+        </div>
+        <div class="text-center">
+          <h4 class="text-gold mb-2">02</h4>
+          <p>If there's alignment, we continue the conversation to learn more about your situation and expectations.</p>
+        </div>
+        <div class="text-center">
+          <h4 class="text-gold mb-2">03</h4>
+          <p>Approved inquiries are added to our waitlist. We match puppies with homes based on temperament, drive, and purpose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Crosspoint</a>
+          <p>Elite Rottweilers. Purpose-Bred.<br>A selective breeding program built on structure, temperament, and pedigree depth.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Navigate</p>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="dogs.html">Our Dogs</a>
+            <a href="litters.html">Litters</a>
+            <a href="about.html">The Program</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-links">
+            <a href="mailto:info@crosspointrottweilers.com">info@crosspointrottweilers.com</a>
+            <a href="contact.html">Inquiry Form</a>
+            <p style="color: rgba(234,226,214,0.5); font-size: 0.85rem; margin-top: 0.5rem;">United States<br>Inquiries by Application</p>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Program</p>
+          <div class="footer-links">
+            <a href="about.html">Our Philosophy</a>
+            <a href="dogs.html">Foundation Dogs</a>
+            <a href="litters.html">Planned Pairings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2026</span> Crosspoint Rottweilers. All Rights Reserved.</p>
+        <p>Built on Bloodline. Defined by Power.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
