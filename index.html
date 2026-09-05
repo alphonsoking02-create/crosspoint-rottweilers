@@ -40,9 +40,23 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.12) 0%, rgba(11,11,13,0) 38%, rgba(11,11,13,0.55) 100%);
     }
     .hero .hero-content { padding-bottom: 3.5rem; }
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~200-600 byte blurred copy of the banner is embedded directly in this
+       file as text, so it needs no download and paints with the page. Visitors
+       see the artwork immediately instead of a black screen while the full
+       banner arrives. The real image is the FIRST background layer, so it
+       covers the placeholder the moment it loads. To regenerate: shrink the
+       banner to ~44px wide, blur slightly, save as WebP q70, base64-encode. */
+    .hero {
+      background-image: url('images/hero-home.webp'),
+                        url('data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABwBgCdASosABkAPpU4lkgloyIhNVgMALASiWcAvzgWbYjlkuXoLVdlnAj2W7D8p4PpvaZCCNKBLVi8NgAA/vvdFR2+PjMlbG9beTnV35T021fL/ZaWzAy3LBDKFQz7J0j9iA19rMFFNYKv71o1ntnIMPJuZbUTQb2u0AdTOjhJbcVPKDh/F4MIEzpkUk2Rfy9VfkZQYjLTz2YnrdjMBSzMxw57eh43UFBA/QaBC2WdLnU/MgAAAA==');
+    }
     /* Phones get the portrait banner; desktop/landscape keeps the wide one */
     @media (max-width: 768px) {
-      .hero { background-image: url('images/hero-home-mobile.webp') !important; }
+      .hero {
+        background-image: url('images/hero-home-mobile.webp'),
+                          url('data:image/webp;base64,UklGRrgBAABXRUJQVlA4IKwBAAAwCgCdASosAE4APoU4l0glI6IhOZgNUKAQiWUAw2h6yjUOaGQSWd79ZjAPWKERJyuoeFUdPBc2C9IxAFXyTTjC/JoHO6WCAAJPqqCWhNQeHz5TTM4i5AMx6oAA/vycNrTnqFwSeWbkqTqGkoL3egutMGJvW7D6OfDUVlij/wfkjqlVU5A2xMXGRT3lXBboML3qMu6OGiAzhpP+J+vncmZQh4MKheCexwqSbGOCY/AiFNTQNr6fauTLfAsAVnVayPLApus9DO9Zq8RFKO7Txwp/TFGJ7a0z1j1aVO1RLpAuE2RGLyVxqtXkD1PsBDUiTZT3hezZ2N6k1dTsjBFo8BkJBAmDaW3xtmy9lbvGotcn18YlDpG5ofbeeUyue5qfii2LJ8pFNAGy/y8TMNK78oDjPPDYFjhLULOBhiRX22FEk7TyB1n/0fMtG19stBwMKj5OjLkUI3b4p77g+R044zl4rl9397lcjuOwF3/0MoK5BBZ3BGHKPa8IGZ8G3K059UrihWuSgrpxsxdgsfYAxm1/nwkbgqGj2SNTFCiPDYoJp+l+ERd2Pf4Hz9dAAA==') !important;
+      }
     }
     /* Portrait phones: lock the hero to the banner's OWN shape (941x1672) instead of
        stretching it to 100vh. With background-size:cover a 100vh hero crops the sides
@@ -122,7 +136,7 @@
   <!-- ============================================
        SECTION 1 — HERO
        ============================================ -->
-  <section class="hero" style="background-image: url('images/hero-home.webp');">
+  <section class="hero">
     <!-- Branding/tagline are baked into the banner image; keep an invisible H1 for SEO + just the CTA buttons -->
     <div class="hero-content">
       <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Crosspoint Rottweilers — Elite, Purpose-Bred Rottweilers</h1>
