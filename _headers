@@ -18,6 +18,15 @@
 /images/*
   Cache-Control: public, max-age=31536000
 
+# Digital business card (/card/) assets. Listed individually rather than
+# /card/* so the page's own HTML keeps revalidating.
+/card/card-hero.webp
+  Cache-Control: public, max-age=31536000
+/card/crest.png
+  Cache-Control: public, max-age=31536000
+/card/crosspoint_available_puppies_qr.png
+  Cache-Control: public, max-age=31536000
+
 # Self-hosted fonts — never change, safe to cache hard.
 /fonts/*
   Cache-Control: public, max-age=31536000
