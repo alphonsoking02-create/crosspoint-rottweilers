@@ -51,6 +51,8 @@
   Cache-Control: public, max-age=2592000
 /script.js
   Cache-Control: public, max-age=2592000
+/gallery.js
+  Cache-Control: public, max-age=2592000
 
 # Security headers for everything.
 #
@@ -62,3 +64,29 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), screen-wake-lock=(), usb=(), xr-spatial-tracking=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://snapwidget.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src 'self' https://snapwidget.com; connect-src 'self' https://snapwidget.com; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests
+
+# ---------------------------------------------------------------------------
+# Content-Security-Policy notes — READ BEFORE ADDING ANYTHING TO THE SITE
+#
+#   script-src 'self' https://snapwidget.com
+#     There are ZERO inline <script> blocks on the site (the gallery lightbox
+#     lives in gallery.js precisely so this can stay strict). If you paste an
+#     inline <script> into a page it WILL be blocked and silently do nothing.
+#     Put new JS in a .js file instead.
+#
+#   style-src 'self' 'unsafe-inline'
+#     Required: the pages use 13 <style> blocks and ~225 style="..." attributes.
+#     Removing 'unsafe-inline' would need all of those rewritten.
+#
+#   img-src 'self' data:
+#     'data:' is needed for the blurred hero placeholders (LQIP) and the
+#     gallery magnifier icon, which are embedded as data URIs.
+#
+#   snapwidget.com is the Instagram feed on the homepage (script + iframe).
+#     If that widget is ever removed, drop it from script-src/frame-src/connect-src.
+#
+#   A new third-party embed (YouTube, a map, a booking widget) will be BLOCKED
+#   until its origin is added to the matching directive.
+# ---------------------------------------------------------------------------
