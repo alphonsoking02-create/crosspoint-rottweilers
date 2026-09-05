@@ -79,6 +79,17 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
       pointer-events: none;
     }
+
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the hero, embedded as text so it needs no
+       download and paints with the page instead of leaving a dark box while
+       the photo loads. The real image is the FIRST layer and covers it as
+       soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
+       WebP q70, base64. */
+    .dog-hero-image {
+      background-image: url('images/dogs/mila-hero.webp'),
+                        url('data:image/webp;base64,UklGRpgBAABXRUJQVlA4IIwBAAAQCQCdASosACMAPp1AnUklo6MhLjQLMLATiWQAgtcfQ0QBnWjOionReWmzfTcG1nC1SKCihCNlzhrbS52cwsfzTh17bXyri+OqvltauP9dQFgA/mkcMgaSzSGvgdLFrDw3IN5HHyIXveCOR4P8KfLrduQHGXjd/zgxlSP/7nq50wY/Of/9QpDWdNg1nep9dtj94E46oW1JpKy4X+GzvxFFUDepi9SpuKdj3LDRvR+0vr8HzEjibX7Wnv8TVWfO9ZzvGvlDZoPS9da6XtqSTfOE28jlb9UBQG8XtgbGaZivQZ7hcRZNA9LeBD5CG2FToBxrj735g00RTV/5fJN7idNWmpddhckpS4Bg0LXbxkagOqzIhY/zDKfDhkYVYAxKbF+j3mIwYdAXBsm8Tyf+/WaElQ9NOpnFyyQTWD4R4+LBoJ3SAHV4+KE8vtVYECz90j5y9XL04wNmZUjEKm7lyjJXila7U1YJfa+4l6op4xk12tGMhYRS5kt5079TVrHJe5M0PDn80UKg/SzAAAA=');
+    }
   </style>
 </head>
 <body>
@@ -119,7 +130,7 @@
 
   <!-- HERO -->
   <section class="dog-hero">
-    <div class="dog-hero-image" style="background-image: url('images/dogs/mila-hero.webp');"></div>
+    <div class="dog-hero-image"></div>
     <div class="dog-hero-content">
       <span class="eyebrow">Foundation Female</span>
       <h1>Crosspoint's Mila</h1>

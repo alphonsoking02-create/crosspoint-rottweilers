@@ -49,6 +49,17 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
       pointer-events: none;
     }
+
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the hero, embedded as text so it needs no
+       download and paints with the page instead of leaving a dark box while
+       the photo loads. The real image is the FIRST layer and covers it as
+       soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
+       WebP q70, base64. */
+    .litter-hero-images > div {
+      background-image: url('images/litters/rumpi-x-mila-hero.webp'),
+                        url('data:image/webp;base64,UklGRs4BAABXRUJQVlA4IMIBAAAQCgCdASosACMAPpE4lkgloyIhNVqqqLASCWYAsR9NlwEfH4rsgwZ3ZGnp9IUD7pC0ad3X0Ra1dGOxk/yfN2fGbhOr1hCxII4+5O+wlFAGrqUCMMCzIkOIsAD++T2fwaSt1sqfzXEUSc6g9vv6aGzEgoahUTg0eDnpjWHT8R2AxcHmzpnjkVpL5D1ha19hToCYjMx4Xuq1+mAPuQ0ioUaC7fIUiawNt/E6byeGKZF8zUwA5yYOu4Nox8T6vlEiFokgK4Vk1qv85sgOiWUqqaOZbGcVg1zJ0YExF81vjViFuGKoW5t7Idz0mpCTiglKpC4zAb81jurOyRzbl7A1xZzKJUFlEUnSLM7xkdx9JQwtxr1DbLCkQGR7TwlKMum92vMgKxPZ4VuGoJz4BTsH2lAO4OVrMN3ZBUMPSOIJssQiKwefPbidYx5PqKqpHbzgQwPp6lPeU1O0OVp+exa2DmAEfp6TDoA4y/REWjvBvknhiqpnw4OpePQG2vu4OCZJRiVzgq9ljhzv++yKrbH7EWc/bYo88oLxeKyrK4RySuJv5zNGGyYMJRF4BP03JTd7BKiUxEIAK52IajeAoFdXSEmDgAA=');
+    }
   </style>
 </head>
 <body>
@@ -91,7 +102,7 @@
   <section class="litter-hero">
     <div class="litter-hero-images">
       <!-- Combined pairing photo -->
-      <div style="background-image: url('images/litters/rumpi-x-mila-hero.webp');"></div>
+      <div></div>
     </div>
     <div class="litter-hero-content">
       <span class="eyebrow">Planned Pairing</span>

@@ -48,6 +48,17 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
       pointer-events: none;
     }
+
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the hero, embedded as text so it needs no
+       download and paints with the page instead of leaving a dark box while
+       the photo loads. The real image is the FIRST layer and covers it as
+       soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
+       WebP q70, base64. */
+    .dog-hero-image {
+      background-image: url('images/dogs/argo-hero.webp'),
+                        url('data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwCACdASosACMAPpk+mkgloyKhLjgMyLATCWIAyYXAvyv3HA0IlPDD8iobWCuc36nvsaiR+lITAIjG6bwAvU42DrCpGNAMxbhkAwYSFfwi4AD++v9MVMto6rNLfJJtFDQiMWyD+qkyxFW5ywTq0pyR72dW7kZimMKywl2h2xhL3bP9zMCre7BreBEJIWZKD0NoNdE1wPFlr4swnihgeB0es6dajq2kY6Mo9vd/0MdcBX3s19gy3gxtdCuq1K0W4Q2YxBJ5c8jvIOzUJdEfCGkL6+E9ApHiZYmfwEOQxGs/k6oiUP8bmoo7qmJk53o+9pgk+HZ1GF2ZkCRGyOsiZbVgvZt0wXYpa8yH6if+73orsYxDD9yC6/kl9nSpo+MWXHYOcXU3ELLW6qIRkk/UYYfJrCdcmF1QxgiaemRBtM4srfHiN/btVYS+nQAAAA==');
+    }
   </style>
 </head>
 <body>
@@ -88,7 +99,7 @@
 
   <!-- HERO -->
   <section class="dog-hero">
-    <div class="dog-hero-image" style="background-image: url('images/dogs/argo-hero.webp');"></div>
+    <div class="dog-hero-image"></div>
     <div class="dog-hero-content">
       <span class="eyebrow">Future Stud &bull; Next Generation</span>
       <h1>Crosspoint's Argo</h1>

@@ -48,6 +48,17 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
       pointer-events: none;
     }
+
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the hero, embedded as text so it needs no
+       download and paints with the page instead of leaving a dark box while
+       the photo loads. The real image is the FIRST layer and covers it as
+       soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
+       WebP q70, base64. */
+    .dog-hero-image {
+      background-image: url('images/dogs/rumpi-hero.webp'),
+                        url('data:image/webp;base64,UklGRsQBAABXRUJQVlA4ILgBAADwCgCdASosACMAPpk+mUglo6KhLjv8yLATCWgAnTOASVC/4UbeD73z74+dHZ2Zy/fOa8R7uJlPzFOHMxxe/40uYBUG4zfNAvhEzs8/nZM8WDpttXUWbBgL4XcITV8ARGAA/vW5dioL4WUQetw41iBbtjVsXsAs2bLexWk7mc5hOaL+ajbK1QmW8isb+04Yf8dun3vOz01F7RksVLraEo7Vf2MYv6/6OGFoXoXx0PGBAmOc7ASkoTC651eaJwNz7ml2//qPsm1WZBw5eL27+tSE2C6+Wje0HM046bduxF1C/ErOHNIKy1BLsRsfhRfsa076+qn2tuRCSXTu9iyNlrd0K3h6iGXGkejHZ9g3bu4N+K8Q4ttfTzXtJb3JyqzE13CYNsEEPVsCf4tiA46sw3NpfeuqLhvGNzT9aP5cNY9b+4r0JjiGF36dAAceqe8hzS7HPhm9fsNU6JMiM/ckXp1tYrbZf0q7chzKz2Z3G9qnj0uxMVpsDHnd7UGKKFFrbjZd0NOAyV3107mztf6eKV8qn+3Gs6jzjPbGEGPqatbrQPWBACvBiVQ7ImhwMC42yzAMz5CcAAAAAA==');
+    }
   </style>
 </head>
 <body>
@@ -88,7 +99,7 @@
 
   <!-- HERO -->
   <section class="dog-hero">
-    <div class="dog-hero-image" style="background-image: url('images/dogs/rumpi-hero.webp');"></div>
+    <div class="dog-hero-image"></div>
     <div class="dog-hero-content">
       <span class="eyebrow">European Import &bull; Legacy Sire</span>
       <h1>CH. Rumpi “The Bear” Vom Beni</h1>

@@ -41,6 +41,17 @@
       background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
       pointer-events: none;
     }
+
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the hero, embedded as text so it needs no
+       download and paints with the page instead of leaving a dark box while
+       the photo loads. The real image is the FIRST layer and covers it as
+       soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
+       WebP q70, base64. */
+    .dog-hero-image {
+      background-image: url('images/dogs/adidas-hero.webp'),
+                        url('data:image/webp;base64,UklGRoABAABXRUJQVlA4IHQBAADQBwCdASosACMAPp0+mkkloyIhNVK4ALATiWYAwrO+CHCpBcxzWewTZPA5Ml9EBjgXtIaPoOgwNzjFFXGCaAKyvGNmWRGZQAD9nPDsev3y5sDr/X00v7beZp3P+CdqHVN29cnrLq54FZ2blyMCbV6ief/jfJnvpp/+v4eRz+LjUOcIVY0q0j8aqIB1skwszi7dojnzHCnZqKXyv05/6r46dhHgLNb/NuDjy9TcEIw1Fkm/c7REySw847f6ZLYjdUUmXhKyfDJ2ILd48rWY/noW6R4tNR/mUf+E4CN/4dcKTT3mTCHQMdYvZVlxXA9yZ5sWwFWV2mGhqeyrCQy6u+r2UEnBtF3S+G3UifYTvFv93/AipyYaylu6d6LKh4axtna+Cgz29EdhYxKgizQ3RpN+JeXB3P7qeS9L75zGrucP4R3oTlfd6nCKKsUeUp2n3HPf6nGIzNb2QS9hDWqPZnjMBpoKnE43QByPqpEgsAMDSpKTqAA=');
+    }
   </style>
 </head>
 <body>
@@ -81,7 +92,7 @@
 
   <!-- STUD HERO -->
   <section class="dog-hero">
-    <div class="dog-hero-image" style="background-image: url('images/dogs/adidas-hero.webp');"></div>
+    <div class="dog-hero-image"></div>
     <div class="dog-hero-content">
       <span class="eyebrow">Producing Male</span>
       <h1>Adidas</h1>
