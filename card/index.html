@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<title>Crosspoint Rottweilers | Digital Business Card</title>
+<meta name="description" content="Crosspoint Rottweilers digital business card — view available puppies, call, email, visit our site, follow us, or save our contact. Ankeny, Iowa.">
+
+<!-- Favicon (Crosspoint luxury crest) -->
+<link rel="icon" type="image/png" href="/card/crest.png">
+<link rel="apple-touch-icon" href="/card/crest.png">
+
+<!-- Social share preview (for texting / posting the /card link) -->
+<meta property="og:title" content="Crosspoint Rottweilers — Digital Business Card">
+<meta property="og:description" content="Elite, purpose-bred Rottweilers. View available puppies, call, email, follow us, or save our contact — Ankeny, Iowa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://crosspointrottweilers.com/card">
+<meta property="og:image" content="https://crosspointrottweilers.com/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --gold:#c9a24b;--gold2:#f2d98a;--line:rgba(201,162,75,.30);
+  --panel1:#141414;--panel2:#080808;--muted:#cfcfcf;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#1c1c1c 0,#080808 45%,#000 100%);color:#fff;font-family:"Segoe UI",Arial,Helvetica,sans-serif;min-height:100vh}
+.wrap{max-width:540px;margin:auto;padding:16px 14px 40px}
+.card{border:1px solid var(--gold);border-radius:26px;overflow:hidden;background:linear-gradient(180deg,#0e0e0e,#020202);box-shadow:0 24px 70px #000}
+
+/* HERO IMAGE (crest + dogs + wordmark + tagline + gold sweep) */
+.hero-img{display:block;width:100%;height:auto}
+
+/* shared gold circle icon */
+.ic{flex:0 0 auto;width:42px;height:42px;border-radius:999px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font-size:16px;background:radial-gradient(circle at 50% 30%,#1a1a1a,#0a0a0a)}
+
+/* ID ROW: owners + QR */
+.idrow{display:flex;align-items:center;gap:14px;margin:16px 14px 6px;padding:16px 16px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,var(--panel1),var(--panel2))}
+.idleft{display:flex;align-items:center;gap:14px;flex:1;min-width:0}
+.avatar{flex:0 0 auto;width:56px;height:56px;border-radius:999px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font-size:26px;background:radial-gradient(circle at 50% 30%,#1a1a1a,#0a0a0a)}
+.idleft h2{margin:0;font-size:18px;font-weight:700;letter-spacing:.5px;color:#fff;line-height:1.15}
+.idleft .role{color:var(--gold2);font-size:12px;letter-spacing:3px;margin-top:4px}
+.idleft .role2{color:var(--gold);font-size:11px;letter-spacing:2px;margin-top:2px}
+.qrcol{flex:0 0 auto;text-align:center}
+.qrcol img{width:92px;height:92px;border-radius:10px;border:1px solid var(--line);background:#050505;display:block}
+.qrcol span{display:block;margin-top:5px;font-family:Georgia,serif;font-style:italic;color:var(--gold2);font-size:12px}
+
+/* CONTACT ROWS */
+.rows{display:grid;gap:10px;padding:8px 14px 4px}
+.row{display:flex;align-items:center;gap:12px;text-decoration:none;padding:11px 13px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,var(--panel1),var(--panel2))}
+.row .txt{flex:1;min-width:0;color:#fff;font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row.static{cursor:default}
+
+/* FEATURES */
+.feats{display:grid;grid-template-columns:repeat(4,1fr);margin:14px 14px 4px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--panel1),var(--panel2));overflow:hidden}
+.feat{padding:16px 6px;text-align:center;border-left:1px solid var(--line)}
+.feat:first-child{border-left:0}
+.feat i{color:var(--gold2);font-size:22px}
+.feat span{display:block;margin-top:8px;color:var(--gold2);font-size:10px;letter-spacing:1px;text-transform:uppercase;line-height:1.35}
+
+/* BIG BUTTONS */
+.cta{display:grid;gap:11px;padding:16px 14px 6px}
+.bigbtn{display:flex;align-items:center;justify-content:center;gap:12px;position:relative;text-decoration:none;padding:16px 20px;border-radius:999px;border:1px solid var(--gold);color:var(--gold2);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:14px;background:linear-gradient(180deg,#161616,#0a0a0a)}
+.bigbtn.primary{color:#141414;background:linear-gradient(180deg,#f2d98a,#c9a24b);border-color:var(--gold2)}
+.bigbtn .arrow{position:absolute;right:14px;width:30px;height:30px;border-radius:999px;border:1px solid currentColor;display:grid;place-items:center;font-size:13px}
+
+/* SOCIAL */
+.social{display:flex;justify-content:center;gap:16px;padding:16px 18px 4px}
+.soc{width:50px;height:50px;border-radius:999px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font-size:20px;text-decoration:none;background:radial-gradient(circle at 50% 30%,#1a1a1a,#0a0a0a);transition:transform .15s ease}
+.soc:hover{transform:translateY(-2px)}
+
+.footer{text-align:center;color:#7a6a45;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:16px 10px 20px}
+
+@media(max-width:380px){
+  .idrow{flex-direction:column;text-align:center}
+  .idleft{flex-direction:column;text-align:center}
+  .feat span{font-size:9px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+
+    <!-- HERO -->
+    <img class="hero-img" src="/card/card-hero.jpg" alt="Crosspoint Rottweilers — Strength. Loyalty. Legacy.">
+
+    <!-- OWNERS + QR -->
+    <section class="idrow">
+      <div class="idleft">
+        <div class="avatar"><i class="fa-solid fa-user"></i></div>
+        <div>
+          <h2>Al &amp; Stephanie King</h2>
+          <div class="role">OWNERS</div>
+          <div class="role2">BREEDER &bull; TRAINER</div>
+        </div>
+      </div>
+      <div class="qrcol">
+        <a href="https://crosspointrottweilers.com/puppies" target="_blank" rel="noopener">
+          <img src="/card/crosspoint_available_puppies_qr.png" alt="Scan for available puppies">
+        </a>
+        <span>Connect With Us</span>
+      </div>
+    </section>
+
+    <!-- CONTACT ROWS -->
+    <section class="rows">
+      <a class="row" href="tel:+15154145026">
+        <span class="ic"><i class="fa-solid fa-phone"></i></span>
+        <span class="txt">515.414.5026</span>
+        <span class="ic"><i class="fa-solid fa-phone"></i></span>
+      </a>
+      <a class="row" href="mailto:crosspointrottweilers@outlook.com?subject=Crosspoint%20Rottweilers%20Inquiry">
+        <span class="ic"><i class="fa-solid fa-envelope"></i></span>
+        <span class="txt">crosspointrottweilers@outlook.com</span>
+        <span class="ic"><i class="fa-solid fa-envelope"></i></span>
+      </a>
+      <a class="row" href="https://crosspointrottweilers.com/" target="_blank" rel="noopener">
+        <span class="ic"><i class="fa-solid fa-globe"></i></span>
+        <span class="txt">www.crosspointrottweilers.com</span>
+        <span class="ic"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+      </a>
+      <div class="row static">
+        <span class="ic"><i class="fa-solid fa-location-dot"></i></span>
+        <span class="txt">Ankeny, IA 50023</span>
+        <span class="ic"><i class="fa-solid fa-location-dot"></i></span>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="feats">
+      <div class="feat"><i class="fa-solid fa-shield-halved"></i><span>AKC Registered</span></div>
+      <div class="feat"><i class="fa-solid fa-award"></i><span>European Bloodlines</span></div>
+      <div class="feat"><i class="fa-solid fa-heart-pulse"></i><span>Health Tested</span></div>
+      <div class="feat"><i class="fa-solid fa-paw"></i><span>Lifetime Breeder Support</span></div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="cta">
+      <a class="bigbtn primary" href="https://crosspointrottweilers.com/puppies" target="_blank" rel="noopener">
+        View Available Puppies <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a class="bigbtn" href="/card/Crosspoint_Rottweilers.vcf" download>
+        Save Contact <span class="arrow"><i class="fa-solid fa-plus"></i></span>
+      </a>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="social">
+      <a class="soc" href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a class="soc" href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="soc" href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a class="soc" href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a class="soc" href="https://wa.me/15154145026?text=Hello%20Crosspoint%20Rottweilers%2C%20I%27d%20like%20to%20inquire%20about%20a%20puppy." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </section>
+
+    <div class="footer">Crosspoint Rottweilers &bull; Ankeny, Iowa</div>
+
+  </main>
+</div>
+</body>
+</html>

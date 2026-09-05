@@ -143,25 +143,36 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Show confirmation
-      // TODO: Replace this with actual form submission logic
-      // Options: Formspree, Netlify Forms, custom API endpoint
-      const formContainer = contactForm.parentElement;
-      contactForm.style.display = 'none';
+      // Actually send the submission to Netlify Forms (AJAX), then show the
+      // confirmation. Netlify captures POSTs whose body includes form-name.
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
-      const confirmation = document.createElement('div');
-      confirmation.className = 'form-confirmation';
-      confirmation.innerHTML = `
-        <h3>Inquiry Received</h3>
-        <div class="divider divider-left"></div>
-        <p>Thank you for submitting your inquiry to Crosspoint Rottweilers. We have received your information and will review it carefully.</p>
-        <p>You can expect to hear from us within 3–5 business days. We appreciate your interest and your patience as we work through our inquiry process thoughtfully.</p>
-        <p style="margin-top: 2rem;">— Crosspoint Rottweilers</p>
-      `;
-      formContainer.appendChild(confirmation);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm)).toString()
+      })
+      .then(function () {
+        const formContainer = contactForm.parentElement;
+        contactForm.style.display = 'none';
 
-      // Scroll to confirmation
-      confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const confirmation = document.createElement('div');
+        confirmation.className = 'form-confirmation';
+        confirmation.innerHTML = `
+          <h3>Inquiry Received</h3>
+          <div class="divider divider-left"></div>
+          <p>Thank you for submitting your inquiry to Crosspoint Rottweilers. We have received your information and will review it carefully.</p>
+          <p>You can expect to hear from us within 3–5 business days. We appreciate your interest and your patience as we work through our inquiry process thoughtfully.</p>
+          <p style="margin-top: 2rem;">— Crosspoint Rottweilers</p>
+        `;
+        formContainer.appendChild(confirmation);
+        confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Inquiry'; }
+        alert('Sorry — something went wrong sending your inquiry. Please email us directly at crosspointrottweilers@outlook.com.');
+      });
     });
 
     // Reset field styles on input

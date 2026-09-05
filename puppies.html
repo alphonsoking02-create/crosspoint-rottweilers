@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preload LCP banner (matches the <picture> selection below) -->
+  <link rel="preload" as="image" href="images/hero-puppies.webp" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-puppies-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+  <title>Available Puppies | Crosspoint Rottweilers — Reserve Yours</title>
+  <!-- Favicon (Crosspoint crest) -->
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta name="description" content="View available Rottweiler puppies from Crosspoint. Reserve with a deposit or purchase outright. Every puppy is purpose-bred, health-tested, and raised to the Crosspoint standard.">
+  <link rel="stylesheet" href="style.css?v=9">
+</head>
+<body class="has-hero-banner">
+<!-- Icon sprite (replaces the full Font Awesome bundle: ~140KB -> ~2KB, no extra request).
+     Icons: Font Awesome Free 6.5.1, CC BY 4.0 - https://fontawesome.com/license/free -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol><symbol id="i-facebook-f" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></symbol><symbol id="i-tiktok" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></symbol><symbol id="i-youtube" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></symbol></svg>
+
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dogs.html">Our Dogs</a>
+        <a href="litters.html">Litters</a>
+        <a href="puppies.html" class="active">Available Puppies</a>
+        <a href="about.html">Our Program</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="chronicles.html">Chronicles</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="dogs.html">Our Dogs</a>
+    <a href="litters.html">Litters</a>
+    <a href="puppies.html">Available Puppies</a>
+    <a href="about.html">Our Program</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="chronicles.html">Chronicles</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- INTERIOR HERO — full banner (logo + title baked into image) -->
+  <section class="hero-banner">
+    <h1 class="sr-only">Available Puppies</h1>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/hero-puppies-mobile.webp">
+      <img src="images/hero-puppies.webp" alt="Available Puppies — Raised with Purpose. Ready for Legacy. — Crosspoint Rottweilers" decoding="async" width="1466" height="499" fetchpriority="high">
+    </picture>
+  </section>
+
+  <!-- UPCOMING & PLANNED LITTERS -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="text-center animate">
+        <span class="eyebrow">Reservations Open</span>
+        <h2>Our Next Litters</h2>
+        <p class="section-subtitle">Individual puppies — with photos, sex, color, and pricing — will be listed here once the litter arrives in August. Reserve your place on the list now to be first in line.</p>
+      </div>
+
+      <div class="grid-2 mt-5 animate animate-stagger" style="max-width: 940px; margin-left: auto; margin-right: auto;">
+
+        <!-- UPCOMING — Hercules x Mila (August 2026) -->
+        <a href="litter-detail.html" class="card litter-card animate">
+          <div class="card-image">
+            <img src="images/litters/hercules-x-mila-card.webp" alt="Hercules × Mila litter — expected August 2026" loading="lazy" decoding="async" width="1586" height="992">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Expected August 2026</span>
+            <h3 class="card-title">Hercules &times; Mila</h3>
+            <p class="card-text">Our upcoming litter — pairing Hercules' commanding structure and heavy bone with Mila's proven production and steady temperament. Reservations are open now; a deposit secures your place in line.</p>
+            <span class="card-link">View Pairing Details</span>
+          </div>
+        </a>
+
+        <!-- PLANNED — Rumpi x Mila (Late 2026) -->
+        <a href="litter-detail-rumpi-mila.html" class="card litter-card animate">
+          <div class="card-image">
+            <img src="images/litters/rumpi-x-mila-card.webp" alt="CH. Rumpi “The Bear” Vom Beni × Mila litter — planned late 2026" loading="lazy" decoding="async" width="1586" height="992">
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Planned Late 2026</span>
+            <h3 class="card-title">CH. Rumpi &ldquo;The Bear&rdquo; Vom Beni &times; Mila</h3>
+            <p class="card-text">A planned late-2026 line breeding carried out through frozen semen — designed to preserve Rumpi's exceptional size, bone, structure, and head type. Waitlist inquiries are welcome now.</p>
+            <span class="card-link">View Pairing Details</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-5 animate">
+        <a href="contact.html" class="btn btn-primary">Reserve Your Spot</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW RESERVATION WORKS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="grid-2 animate">
+        <div>
+          <span class="eyebrow">How It Works</span>
+          <h2>Reserving Your Puppy</h2>
+          <div class="divider divider-left"></div>
+          <p>Reservations at Crosspoint are handled personally. When a pairing is right for you, we arrange your deposit and placement directly with you — one conversation, no impersonal online checkout.</p>
+          <p class="mt-2">Submit an inquiry to start the conversation. We'll walk you through availability, pricing, the deposit, and pickup or transport, and answer any questions before anything is finalized.</p>
+        </div>
+        <div>
+          <h4 class="text-gold mb-3">The Reservation Process</h4>
+          <div style="border-left: 2px solid var(--cp-gunmetal); padding-left: 1.5rem;">
+            <div class="mb-4">
+              <p class="dog-stat-label">Step 1 — Reach Out</p>
+              <p style="color: var(--cp-ivory);">Submit an inquiry through our contact form and tell us what you're looking for.</p>
+            </div>
+            <div class="mb-4">
+              <p class="dog-stat-label">Step 2 — Arrange Your Deposit</p>
+              <p style="color: var(--cp-ivory);">Once we've connected, we arrange your deposit directly to hold your place on the list.</p>
+            </div>
+            <div>
+              <p class="dog-stat-label">Step 3 — Placement</p>
+              <p style="color: var(--cp-ivory);">We coordinate the balance, pickup, or transport with you personally when your puppy is ready.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="text-center animate">
+        <span class="eyebrow">Every Crosspoint Puppy</span>
+        <h2>What's Included</h2>
+        <p class="section-subtitle">Every puppy leaves Crosspoint with the foundation already in place.</p>
+      </div>
+
+      <div class="grid-4 mt-5 animate animate-stagger">
+        <div class="program-value">
+          <h4>Health Records</h4>
+          <p>Up-to-date vaccinations, deworming schedule, and a vet-issued health certificate.</p>
+        </div>
+        <div class="program-value">
+          <h4>AKC Registration</h4>
+          <p>Full registration paperwork and a verified pedigree of both sire and dam.</p>
+        </div>
+        <div class="program-value">
+          <h4>Starter Pack</h4>
+          <p>Inukshuk Professional starter food, scent blanket, and a transition guide.</p>
+        </div>
+        <div class="program-value">
+          <h4>Lifetime Support</h4>
+          <p>Direct access to us for the life of the dog. Questions, training, anything.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 animate">
+        <p style="color: rgba(234,226,214,0.85);">We also recommend starting every Crosspoint puppy on NuVet Plus — immune, skin, coat, and joint support that complements their Inukshuk starter food.</p>
+        <a href="why-nuvet.html" class="btn btn-secondary mt-3">Why NuVet &amp; How to Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner" style="background-image: url('images/cta-background.webp?v=4');">
+    <span class="eyebrow">Not Seeing the Right Match?</span>
+    <h2>Join the Waitlist</h2>
+    <p>If our current puppies are reserved or you're looking for something specific, submit an inquiry and we'll keep you updated on upcoming litters.</p>
+    <a href="contact.html" class="btn btn-primary">Submit an Inquiry</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
+          <p>Elite Rottweilers. Purpose-Bred.<br>A selective breeding program built on structure, temperament, and pedigree depth.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" aria-label="Instagram"><svg class="cp-icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener" aria-label="Facebook"><svg class="cp-icon" aria-hidden="true"><use href="#i-facebook-f"></use></svg></a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="TikTok"><svg class="cp-icon" aria-hidden="true"><use href="#i-tiktok"></use></svg></a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="YouTube"><svg class="cp-icon" aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+          </div>
+          <p class="footer-heading" style="margin-top: 1.5rem;">Follow Us</p>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener">Instagram &mdash; @alphonsoking02</a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener">Facebook &mdash; Crosspoint Rottweilers</a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener">TikTok &mdash; @CrosspointRottweilers</a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener">YouTube &mdash; @CrosspointRottweilers</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Navigate</p>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="dogs.html">Our Dogs</a>
+            <a href="litters.html">Litters</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="about.html">Our Program</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="chronicles.html">Chronicles</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-links">
+            <a href="mailto:crosspointrottweilers@outlook.com">crosspointrottweilers@outlook.com</a>
+            <a href="contact.html">Inquiry Form</a>
+            <p style="color: rgba(234,226,214,0.5); font-size: 0.85rem; margin-top: 0.5rem;">United States<br>Inquiries by Application</p>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Program</p>
+          <div class="footer-links">
+            <a href="about.html">Our Philosophy</a>
+            <a href="dogs.html">Foundation Dogs</a>
+            <a href="litters.html">Planned Pairings</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="why-nuvet.html">Why NuVet</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2018 Crosspoint Rottweilers. All Rights Reserved.</p>
+        <p>Where Strength Meets Purpose.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

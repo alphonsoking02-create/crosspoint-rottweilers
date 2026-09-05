@@ -3,25 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preload LCP banner (matches the <picture> selection below) -->
+  <link rel="preload" as="image" href="images/hero-litters.webp?v=3" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-litters-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
   <title>Upcoming Litters | Crosspoint Rottweilers — Planned Pairings</title>
+  <!-- Favicon (Crosspoint crest) -->
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="manifest" href="site.webmanifest">
+
   <meta name="description" content="View current and planned Rottweiler litters at Crosspoint. Every pairing is selected with intention — structure, temperament, and bloodline quality guide every decision.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
-<body>
+<body class="has-hero-banner">
+<!-- Icon sprite (replaces the full Font Awesome bundle: ~140KB -> ~2KB, no extra request).
+     Icons: Font Awesome Free 6.5.1, CC BY 4.0 - https://fontawesome.com/license/free -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol><symbol id="i-facebook-f" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></symbol><symbol id="i-tiktok" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></symbol><symbol id="i-youtube" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></symbol></svg>
+
 
   <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Crosspoint</a>
+      <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="dogs.html">Our Dogs</a>
         <a href="litters.html" class="active">Litters</a>
-        <a href="about.html">The Program</a>
+        <a href="puppies.html">Available Puppies</a>
+        <a href="about.html">Our Program</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="chronicles.html">Chronicles</a>
         <a href="contact.html">Contact</a>
       </div>
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -33,17 +47,20 @@
     <a href="index.html">Home</a>
     <a href="dogs.html">Our Dogs</a>
     <a href="litters.html">Litters</a>
-    <a href="about.html">The Program</a>
+    <a href="puppies.html">Available Puppies</a>
+    <a href="about.html">Our Program</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="chronicles.html">Chronicles</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- INTERIOR HERO -->
-  <section class="hero-interior" style="background-image: url('images/hero-litters.jpg');">
-    <div class="hero-content">
-      <span class="eyebrow">Purpose-Bred Pairings</span>
-      <h1>Upcoming Litters</h1>
-      <p>Every pairing at Crosspoint is selected to advance the program — structure, temperament, and pedigree depth guide every breeding decision.</p>
-    </div>
+  <!-- INTERIOR HERO — full banner (logo + title baked into image) -->
+  <section class="hero-banner">
+    <h1 class="sr-only">Our Litters</h1>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/hero-litters-mobile.webp">
+      <img src="images/hero-litters.webp?v=3" alt="Our Litters — Strength. Loyalty. Legacy. — Crosspoint Rottweilers" decoding="async" width="1717" height="916" fetchpriority="high">
+    </picture>
   </section>
 
   <!-- CURRENT LITTERS -->
@@ -60,8 +77,7 @@
         <!-- REPLACE: Update all litter details, images, and links -->
         <a href="litter-detail.html" class="card litter-card mb-4 animate">
           <div class="card-image">
-            <!-- REPLACE: Insert pairing photo or sire portrait -->
-            <div class="img-placeholder">Hercules &times; Mila</div>
+            <img src="images/litters/hercules-x-mila-card.webp" alt="Hercules × Mila pairing" loading="lazy" decoding="async" width="1586" height="992">
           </div>
           <div class="card-body">
             <span class="card-tag">Expected Summer 2026</span>
@@ -86,14 +102,14 @@
 
       <div class="mt-4">
         <!-- PLANNED LITTER 1 -->
-        <a href="litter-detail.html" class="card litter-card mb-4 animate">
+        <a href="litter-detail-rumpi-mila.html" class="card litter-card mb-4 animate">
           <div class="card-image">
-            <div class="img-placeholder">Rumpi &times; Mila</div>
+            <img src="images/litters/rumpi-x-mila-card.webp" alt="CH. Rumpi “The Bear” Vom Beni × Mila pairing" loading="lazy" decoding="async" width="1586" height="992">
           </div>
           <div class="card-body">
             <span class="card-tag">Planned Fall 2026</span>
-            <h3 class="card-title">Rumpi vom Südpark &times; Crosspoint's Mila</h3>
-            <p class="card-text">European depth meets Crosspoint foundation. Selected for type, bone, and working character. A pairing built to advance the program's next generation with imported bloodline influence.</p>
+            <h3 class="card-title">CH. Rumpi &ldquo;The Bear&rdquo; Vom Beni &times; Crosspoint's Mila</h3>
+            <p class="card-text">A purposeful line breeding — Rumpi is the grandsire of Mila. Carried out through frozen semen secured before his passing, this planned late-2026 pairing is designed to preserve his outstanding size, bone, structure, head type, and balanced temperament in the next generation.</p>
             <span class="card-link">View Pairing Details</span>
           </div>
         </a>
@@ -131,7 +147,7 @@
   </section>
 
   <!-- CTA BANNER -->
-  <section class="cta-banner" style="background-image: url('images/cta-background.jpg');">
+  <section class="cta-banner" style="background-image: url('images/cta-background.webp?v=4');">
     <span class="eyebrow">Questions About Our Litters?</span>
     <h2>We're Here to Help</h2>
     <p>If you have questions about an upcoming pairing, our placement process, or whether Crosspoint is the right fit — reach out.</p>
@@ -143,11 +159,20 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">Crosspoint</a>
+          <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
           <p>Elite Rottweilers. Purpose-Bred.<br>A selective breeding program built on structure, temperament, and pedigree depth.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" aria-label="Instagram"><svg class="cp-icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener" aria-label="Facebook"><svg class="cp-icon" aria-hidden="true"><use href="#i-facebook-f"></use></svg></a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="TikTok"><svg class="cp-icon" aria-hidden="true"><use href="#i-tiktok"></use></svg></a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="YouTube"><svg class="cp-icon" aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+          </div>
+          <p class="footer-heading" style="margin-top: 1.5rem;">Follow Us</p>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener">Instagram &mdash; @alphonsoking02</a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener">Facebook &mdash; Crosspoint Rottweilers</a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener">TikTok &mdash; @CrosspointRottweilers</a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener">YouTube &mdash; @CrosspointRottweilers</a>
           </div>
         </div>
         <div>
@@ -156,14 +181,17 @@
             <a href="index.html">Home</a>
             <a href="dogs.html">Our Dogs</a>
             <a href="litters.html">Litters</a>
-            <a href="about.html">The Program</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="about.html">Our Program</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="chronicles.html">Chronicles</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>
         <div>
           <p class="footer-heading">Contact</p>
           <div class="footer-links">
-            <a href="mailto:info@crosspointrottweilers.com">info@crosspointrottweilers.com</a>
+            <a href="mailto:crosspointrottweilers@outlook.com">crosspointrottweilers@outlook.com</a>
             <a href="contact.html">Inquiry Form</a>
             <p style="color: rgba(234,226,214,0.5); font-size: 0.85rem; margin-top: 0.5rem;">United States<br>Inquiries by Application</p>
           </div>
@@ -174,16 +202,18 @@
             <a href="about.html">Our Philosophy</a>
             <a href="dogs.html">Foundation Dogs</a>
             <a href="litters.html">Planned Pairings</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="why-nuvet.html">Why NuVet</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> Crosspoint Rottweilers. All Rights Reserved.</p>
-        <p>Built on Bloodline. Defined by Power.</p>
+        <p>&copy; 2018 Crosspoint Rottweilers. All Rights Reserved.</p>
+        <p>Where Strength Meets Purpose.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

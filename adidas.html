@@ -3,25 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preload LCP hero (CSS backgrounds are discovered late) -->
+  <link rel="preload" as="image" href="images/dogs/adidas-hero.webp" fetchpriority="high">
   <title>Adidas | Crosspoint Rottweilers</title>
+  <!-- Favicon (Crosspoint crest) -->
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <link rel="manifest" href="site.webmanifest">
+
   <meta name="description" content="Adidas — a producing male in the Crosspoint Rottweiler breeding program. Substance, structure, and temperament in a program-proven stud.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=9">
+  <style>
+    /* Scoped to adidas.html only — all changes here are local to this page */
+
+    /* Hide the logo on this page (per request) */
+    .nav .nav-logo { display: none; }
+
+    /* Make the nav darker so menu items stay readable over the hero photo */
+    .nav {
+      background-color: rgba(11, 11, 13, 0.75) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Hero photo + dark gradient overlay at top so nav blends in cleanly */
+    .dog-hero-image {
+      position: relative;
+    }
+    .dog-hero-image::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, rgba(11,11,13,0.85), transparent);
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
+<!-- Icon sprite (replaces the full Font Awesome bundle: ~140KB -> ~2KB, no extra request).
+     Icons: Font Awesome Free 6.5.1, CC BY 4.0 - https://fontawesome.com/license/free -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol><symbol id="i-facebook-f" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></symbol><symbol id="i-tiktok" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></symbol><symbol id="i-youtube" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></symbol></svg>
+
 
   <!-- NAVIGATION -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Crosspoint</a>
+      <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="dogs.html" class="active">Our Dogs</a>
         <a href="litters.html">Litters</a>
-        <a href="about.html">The Program</a>
+        <a href="puppies.html">Available Puppies</a>
+        <a href="about.html">Our Program</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="chronicles.html">Chronicles</a>
         <a href="contact.html">Contact</a>
       </div>
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -33,16 +72,16 @@
     <a href="index.html">Home</a>
     <a href="dogs.html">Our Dogs</a>
     <a href="litters.html">Litters</a>
-    <a href="about.html">The Program</a>
+    <a href="puppies.html">Available Puppies</a>
+    <a href="about.html">Our Program</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="chronicles.html">Chronicles</a>
     <a href="contact.html">Contact</a>
   </div>
 
   <!-- STUD HERO -->
   <section class="dog-hero">
-    <div class="portrait-frame portrait-frame-bordered">
-      <img src="images/dogs/adidas-main.png" alt="Adidas — Crosspoint Rottweilers stud portrait">
-      <div class="portrait-frame-floor"></div>
-    </div>
+    <div class="dog-hero-image" style="background-image: url('images/dogs/adidas-hero.webp');"></div>
     <div class="dog-hero-content">
       <span class="eyebrow">Producing Male</span>
       <h1>Adidas</h1>
@@ -51,15 +90,15 @@
       <div class="dog-stats">
         <div class="dog-stat">
           <p class="dog-stat-label">Registered Name</p>
-          <p class="dog-stat-value">[Adidas Full Registered Name]</p>
+          <p class="dog-stat-value">CrossPoints Adidas von der Obersten</p>
         </div>
         <div class="dog-stat">
           <p class="dog-stat-label">Date of Birth</p>
-          <p class="dog-stat-value">[Month Year]</p>
+          <p class="dog-stat-value">October 2024</p>
         </div>
         <div class="dog-stat">
           <p class="dog-stat-label">Weight</p>
-          <p class="dog-stat-value">[000 lbs]</p>
+          <p class="dog-stat-value">137 lbs</p>
         </div>
         <div class="dog-stat">
           <p class="dog-stat-label">Color</p>
@@ -87,16 +126,18 @@
       </div>
       <div class="grid-2 mt-4 animate">
         <div>
-          <p>Adidas carries a pedigree with proven producers across both sire and dam lines. His lineage reflects the substance-first direction of the Crosspoint program — dogs selected for bone, head type, correct structure, and stable temperament rather than trend.</p>
-          <p class="mt-3">[Second paragraph: notable ancestors, titles, ZTP/Körung qualifications, linebreeding of interest.]</p>
+          <p>Adidas was bred by Ruben Rodriguez and is sired by Wyatt von der Obersten out of Britney von der Alten Festong — a pedigree built on Tannenfeld, Hause Edelstein, and Serbian/Croatian (SRB/CRO) bloodlines.</p>
+          <p class="mt-3">His sire, Wyatt, traces heavily to Doctor Timit-Tor through the Tannenfeld line, concentrating the substance, bone, and head type the Crosspoint program is built around. Wyatt is also the sire of our foundation female, Mila — closely tying Adidas to the program's female line.</p>
         </div>
         <div>
           <h4 class="text-gold mb-3">Notable Lineage</h4>
           <ul style="list-style: none; padding: 0;">
-            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Sire: [Sire Name — Titles]</li>
-            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Dam: [Dam Name — Titles]</li>
-            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Grandsire (Paternal): [Name — Titles]</li>
-            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Grandsire (Maternal): [Name — Titles]</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Sire: Wyatt von der Obersten (WS75852310)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Dam: Britney von der Alten Festong (WS74323601)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Paternal Grandsire: Dzingis Kan vom Tannenfeld (KSS 702628 RW)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Paternal Granddam: Hela vom Tannenfeld (WS70268303)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Maternal Grandsire: Eminem vom Hause Edelstein (HKS 17586 RW)</li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #2E2E33; color: rgba(234,226,214,0.8);">Maternal Granddam: Ramona von der Alten Festung (HKS HR 17476)</li>
           </ul>
         </div>
       </div>
@@ -133,16 +174,16 @@
         <span class="eyebrow">Health</span>
         <h2>Health &amp; Testing</h2>
         <div class="divider divider-left"></div>
-        <p class="mt-3">All breeding dogs at Crosspoint undergo comprehensive health screening before entering the program. Below are Adidas' documented clearances.</p>
+        <p class="mt-3">All breeding dogs at Crosspoint undergo comprehensive health screening before entering the program. Adidas's preliminary hip evaluation came back Good; the remaining panels are in progress.</p>
       </div>
 
       <div class="health-badges mt-4 animate">
-        <span class="badge">OFA Hips — [Result]</span>
-        <span class="badge">OFA Elbows — [Result]</span>
-        <span class="badge">Cardiac — [Result]</span>
-        <span class="badge">Eyes — [Result]</span>
-        <span class="badge">JLPP — [Result]</span>
-        <span class="badge">DM — [Result]</span>
+        <span class="badge">OFA Hips — Good (Prelim)</span>
+        <span class="badge">OFA Elbows — Pending</span>
+        <span class="badge">Cardiac — Pending</span>
+        <span class="badge">Eyes — Pending</span>
+        <span class="badge">JLPP — Pending</span>
+        <span class="badge">DM — Pending</span>
       </div>
 
       <p class="mt-4 animate" style="color: rgba(234,226,214,0.6); font-size: 0.9rem;">Full health documentation is available upon request during the inquiry process.</p>
@@ -157,13 +198,20 @@
         <h2>Adidas</h2>
       </div>
 
-      <div class="dog-gallery mt-5 animate">
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 1</div></div>
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 2</div></div>
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 3</div></div>
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 4</div></div>
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 5</div></div>
-        <div class="dog-gallery-item"><div class="img-placeholder" style="aspect-ratio: 1;">Photo 6</div></div>
+      <!-- Gallery: only Adidas and his sire. -->
+      <div class="dog-gallery mt-5 animate" style="grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <figure style="margin: 0;">
+          <div class="halo-frame halo-native">
+            <img src="images/dogs/1%20Adidas.webp" alt="Adidas" loading="lazy" decoding="async" width="320" height="320">
+          </div>
+          <figcaption style="text-align:center; font-size:0.85rem; letter-spacing:0.1em; color:var(--cp-gold); margin-top:0.75rem; text-transform:uppercase;">Adidas</figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <div class="halo-frame halo-native">
+            <img src="images/dogs/4%20Adidas%20and%20Mila%20Father%20Wyatt.webp" alt="Wyatt — Adidas's sire" loading="lazy" decoding="async" width="320" height="320">
+          </div>
+          <figcaption style="text-align:center; font-size:0.85rem; letter-spacing:0.1em; color:var(--cp-gold); margin-top:0.75rem; text-transform:uppercase;">Wyatt · Sire</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -181,11 +229,10 @@
         </div>
         <div>
           <h4 class="text-gold mb-3">Current &amp; Planned Pairings</h4>
-          <div class="card" style="margin-bottom: 1rem;">
+          <div class="card">
             <div class="card-body">
-              <span class="card-tag">[Season Year]</span>
-              <h3 class="card-title" style="font-size: 1.1rem;">Adidas &times; [Dam]</h3>
-              <a href="litter-detail.html" class="card-link">View Litter Details</a>
+              <p style="color: rgba(234,226,214,0.85); margin: 0;">No litters from Adidas are currently planned for public release. To be notified about future Adidas pairings, we welcome your inquiry.</p>
+              <a href="contact.html" class="card-link" style="margin-top: 0.75rem; display: inline-block;">Submit an Inquiry</a>
             </div>
           </div>
         </div>
@@ -194,7 +241,7 @@
   </section>
 
   <!-- CTA BANNER -->
-  <section class="cta-banner" style="background-image: url('images/cta-background.jpg');">
+  <section class="cta-banner" style="background-image: url('images/cta-background.webp?v=4');">
     <span class="eyebrow">Interested in This Bloodline?</span>
     <h2>Begin Your Inquiry</h2>
     <p>If you're interested in a puppy sired by Adidas or want to learn more about our program, we welcome your inquiry.</p>
@@ -206,11 +253,20 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">Crosspoint</a>
+          <a href="index.html" class="nav-logo"><img src="images/brand/logo.webp" alt="Crosspoint Rottweilers" decoding="async" width="660" height="490"></a>
           <p>Elite Rottweilers. Purpose-Bred.<br>A selective breeding program built on structure, temperament, and pedigree depth.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" aria-label="Instagram"><svg class="cp-icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener" aria-label="Facebook"><svg class="cp-icon" aria-hidden="true"><use href="#i-facebook-f"></use></svg></a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="TikTok"><svg class="cp-icon" aria-hidden="true"><use href="#i-tiktok"></use></svg></a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener" aria-label="YouTube"><svg class="cp-icon" aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+          </div>
+          <p class="footer-heading" style="margin-top: 1.5rem;">Follow Us</p>
+          <div class="footer-links" style="font-size: 0.85rem;">
+            <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener">Instagram &mdash; @alphonsoking02</a>
+            <a href="https://www.facebook.com/CrosspointRottweilers" target="_blank" rel="noopener">Facebook &mdash; Crosspoint Rottweilers</a>
+            <a href="https://www.tiktok.com/@CrosspointRottweilers" target="_blank" rel="noopener">TikTok &mdash; @CrosspointRottweilers</a>
+            <a href="https://www.youtube.com/@CrosspointRottweilers" target="_blank" rel="noopener">YouTube &mdash; @CrosspointRottweilers</a>
           </div>
         </div>
         <div>
@@ -219,14 +275,17 @@
             <a href="index.html">Home</a>
             <a href="dogs.html">Our Dogs</a>
             <a href="litters.html">Litters</a>
-            <a href="about.html">The Program</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="about.html">Our Program</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="chronicles.html">Chronicles</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>
         <div>
           <p class="footer-heading">Contact</p>
           <div class="footer-links">
-            <a href="mailto:info@crosspointrottweilers.com">info@crosspointrottweilers.com</a>
+            <a href="mailto:crosspointrottweilers@outlook.com">crosspointrottweilers@outlook.com</a>
             <a href="contact.html">Inquiry Form</a>
             <p style="color: rgba(234,226,214,0.5); font-size: 0.85rem; margin-top: 0.5rem;">United States<br>Inquiries by Application</p>
           </div>
@@ -237,16 +296,18 @@
             <a href="about.html">Our Philosophy</a>
             <a href="dogs.html">Foundation Dogs</a>
             <a href="litters.html">Planned Pairings</a>
+            <a href="puppies.html">Available Puppies</a>
+            <a href="why-nuvet.html">Why NuVet</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> Crosspoint Rottweilers. All Rights Reserved.</p>
-        <p>Built on Bloodline. Defined by Power.</p>
+        <p>&copy; 2018 Crosspoint Rottweilers. All Rights Reserved.</p>
+        <p>Where Strength Meets Purpose.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
