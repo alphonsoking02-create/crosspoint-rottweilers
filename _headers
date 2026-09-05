@@ -89,4 +89,37 @@
 #
 #   A new third-party embed (YouTube, a map, a booking widget) will be BLOCKED
 #   until its origin is added to the matching directive.
+#
+# ---------------------------------------------------------------------------
+# HOW TO ALLOW A NEW EMBED
+#
+# 1. Look at the code the company gives you and match it to a directive:
+#        <iframe src="https://...">      -> frame-src
+#        <script src="https://...">      -> script-src
+#        <img src="https://...">         -> img-src
+#        <link rel="stylesheet" ...>     -> style-src
+#        loads data in the background    -> connect-src
+#
+# 2. Add just the domain (no path) to that directive on the
+#    Content-Security-Policy line above, separated by a space.
+#
+# 3. Reload the page and press F12 -> Console. If something is still blocked,
+#    the red message NAMES the address and the directive to add it to.
+#
+# COPY-PASTE EXAMPLES (replacements for the directive shown)
+#
+#   YouTube video (iframe):
+#     frame-src 'self' https://snapwidget.com https://www.youtube-nocookie.com https://www.youtube.com
+#
+#   Google Maps (iframe):
+#     frame-src 'self' https://snapwidget.com https://www.google.com
+#
+#   Booking widget, e.g. Calendly (script AND iframe - needs BOTH lines):
+#     script-src 'self' https://snapwidget.com https://assets.calendly.com
+#     frame-src 'self' https://snapwidget.com https://calendly.com
+#
+# Rule of thumb: a widget that is a <script> and also shows a panel almost
+# always needs its domain in BOTH script-src and frame-src.
+#
+# Fuller write-up: ../SITE-OPTIMIZATION-NOTES.md
 # ---------------------------------------------------------------------------
