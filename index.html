@@ -44,6 +44,19 @@
     @media (max-width: 768px) {
       .hero { background-image: url('images/hero-home-mobile.webp') !important; }
     }
+    /* Portrait phones: lock the hero to the banner's OWN shape (941x1672) instead of
+       stretching it to 100vh. With background-size:cover a 100vh hero crops the sides
+       by 18-20% on tall phones (iPhone 15, Pixel 8, Galaxy S23), which clipped the
+       ends off the CROSSPOINT wordmark baked into the artwork. Same fix already used
+       on the gallery and dog-profile heroes. Orientation-guarded so a phone held
+       sideways doesn't get a hero three viewports tall. */
+    @media (max-width: 768px) and (orientation: portrait) {
+      .hero {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 941 / 1672;
+      }
+    }
     /* Instagram feed section */
     .ig-embed { max-width: 900px; margin: 0 auto; }
     .ig-embed iframe { display: block; width: 100%; border: none; overflow: hidden; }
@@ -461,6 +474,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="script.js?v=2"></script>
+  <script defer src="script.js?v=2"></script>
 </body>
 </html>
