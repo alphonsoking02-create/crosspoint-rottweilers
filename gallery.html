@@ -29,12 +29,19 @@
     }
     /* Lock the hero to the banner's 16:9 shape so the FULL banner shows —
        Adidas's head and feet both stay in frame, nothing cropped. */
+    /* INSTANT-PAINT PLACEHOLDER (LQIP)
+       A ~44px blurred copy of the banner, embedded here as text so it needs no
+       download and paints with the page. The real image is the FIRST layer and
+       covers it as soon as it arrives. Regenerate: shrink to ~44px wide,
+       GaussianBlur(0.6), WebP q70, base64. */
     .hero-interior {
       min-height: 0;
       height: auto;
       aspect-ratio: 1672 / 941;
       background-size: cover;
       background-position: center;
+      background-image: url('images/hero-gallery.webp'),
+                        url('data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwBwCdASosABkAPp1CmUklo6IhKqwAsBOJagCdOUFT3ktQIrA20QEkDcHBIdFLjaHAMVlewIg0XdYKBcfDzim6mDygiF3TDiwA/u+PR9azn6Ofm2HFXzAjHv5ulGLCm7p5QepouGZmjl3a/kkFPWl5cUlxqYs6O7mFPiiywI9Tg8phcmPY5Mwj2mQcr4CAU1N9HYYAuBRCjSeEOR/BrdU5wbnKWtsxg/xf6VZ5x2azIPkDGLDUn0LJKWHIWpWe6+pvEVEiZJVGVDP/rFXtyHujQU/HoIvkYAfBeHgslqCJWa9lyXui78FSslLoAiLdy7Dj+4f2KNjUAf2sfVU0LJ0YdyBqNjILGYlRkUz+/9Jc9BiCmB96xMTlTG/kCCwlGyII/rPlAfOVMMwH5WFOVn9C8OpXs853qxbX1qDSPRpNE1c9WH+xv6DxkiAAAA==');
     }
     /* On phones a 16:9 band gets too short — fall back to a taller band */
     @media (max-width: 768px) {
@@ -216,7 +223,7 @@
   </div>
 
   <!-- INTERIOR HERO -->
-  <section class="hero-interior" style="background-image: url('images/hero-gallery.webp');">
+  <section class="hero-interior">
     <div class="hero-content">
       <span class="eyebrow">Our Extended Family</span>
       <h1>Gallery</h1>
