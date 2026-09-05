@@ -393,9 +393,13 @@
       </div>
 
       <div class="ig-embed mt-5 animate">
-        <!-- Live Instagram feed via SnapWidget — widget #1126651 (@alphonsoking02) -->
-        <script defer src="https://snapwidget.com/js/snapwidget.js"></script>
-        <iframe loading="lazy" src="https://snapwidget.com/embed/1126651" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;" title="Posts from Instagram — Crosspoint Rottweilers"></iframe>
+        <!-- Live Instagram feed via SnapWidget — widget #1126651 (@alphonsoking02).
+             The iframe is NOT in the markup: an empty iframe still creates an
+             about:blank document, and the widget's script is third-party work on the
+             main thread. script.js builds both once the reader scrolls within 600px
+             of this box, so nothing here touches the initial page load. The 600px
+             margin means the widget sizes itself off-screen and cannot shift layout. -->
+        <div id="ig-feed" data-widget="https://snapwidget.com/embed/1126651" style="min-height:320px;"></div>
       </div>
 
       <div class="text-center mt-5 animate">
@@ -488,6 +492,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script defer src="script.js?v=2"></script>
+  <script defer src="script.js?v=3"></script>
 </body>
 </html>

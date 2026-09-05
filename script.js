@@ -193,6 +193,47 @@ document.addEventListener('DOMContentLoaded', function () {
   const imagePlaceholders = document.querySelectorAll('.img-placeholder');
   // Placeholder text is handled via CSS / HTML content
 
+
+  /* ----------------------------------------
+     INSTAGRAM EMBED (SnapWidget) — BUILT ON APPROACH
+     SnapWidget is third-party and its script runs on the main thread. The feed
+     sits near the bottom of a ~12,000px page, so loading it with the rest of the
+     page makes every visitor pay for something most never scroll to. Nothing
+     below runs until the reader is within 600px of the box; the margin also lets
+     the widget size itself off-screen so it cannot cause a layout shift.
+     ---------------------------------------- */
+  const igBox = document.getElementById('ig-feed');
+  if (igBox && igBox.dataset.widget) {
+    let igLoaded = false;
+    const buildIg = function () {
+      if (igLoaded) return;
+      igLoaded = true;
+      const f = document.createElement('iframe');
+      f.src = igBox.dataset.widget;
+      f.className = 'snapwidget-widget';
+      f.setAttribute('allowtransparency', 'true');
+      f.setAttribute('frameborder', '0');
+      f.setAttribute('scrolling', 'no');
+      f.setAttribute('title', 'Posts from Instagram — Crosspoint Rottweilers');
+      f.style.cssText = 'border:none;overflow:hidden;width:100%;';
+      igBox.appendChild(f);
+      const s = document.createElement('script');
+      s.src = 'https://snapwidget.com/js/snapwidget.js';
+      s.async = true;
+      document.body.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      const igObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { buildIg(); igObs.disconnect(); }
+        });
+      }, { rootMargin: '600px 0px' });
+      igObs.observe(igBox);
+    } else {
+      buildIg();
+    }
+  }
+
   /* ----------------------------------------
      YEAR IN FOOTER
      Auto-updates copyright year.
