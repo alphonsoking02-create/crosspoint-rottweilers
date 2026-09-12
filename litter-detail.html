@@ -61,6 +61,21 @@
       background-image: url('images/litters/hercules-x-mila-hero.webp'),
                         url('data:image/webp;base64,UklGRp4BAABXRUJQVlA4IJIBAABwCQCdASosACMAPp1EnUolo6Kho4z4sBOJYgDIy7JZXLOQIHxFn+Lg3xDvdabT1yLZux0fqFV20qfLGR5+QP+0Y74GXh+HbbssEgEJVCe7SsXTaAAA/v0E8Qp++41VJqzjn7ly0fw+Y3uJbWSa7WrCatziBz9zjHMzVob5zhHmplV7Jh/t1CkhYMZDaOyDtaR5NP6c0JwxYL+k72Ipg6C7aL6owMrhmJlZq3CE/f6uCdULWASYCGryiStEzp9MZU4qOxdxJK7p9wV1fe55Y8u+SjMXWihRsJooxmNCwCElkNWy2/S7mzamjMYGGN7hS56NG8nXQoSEaeLMgdRLI3SN9nunQ3CJdaLQB4EHafAGbguIWmAJO5EwoZfGR/UqmEXW2dJXDS6mkLevzIM49az2G/kT9qc6i5wIVkMfbPsqqsBxZewRaV4POvVVIF9uFdmTogVQwsljpVVFKYlq9Pu9a6uXYekCA3uDxzTuZSyRMW2McXhxuMXWB9qEWtP5V3oMMFhq8NAhSjK+jRmwLagAAAA=');
     }
+
+    /* THE LITTER section — puppy cards, litter photo grid, video, placeholders */
+    .pup-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); }
+    @media (max-width: 768px) { .pup-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; } }
+    .pup-card  { background-color: var(--cp-charcoal); overflow: hidden; }
+    .pup-photo { aspect-ratio: 4 / 5; background-color: var(--cp-gunmetal); overflow: hidden; }
+    .pup-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pup-body  { padding: 1rem 1.25rem; text-align: center; }
+    .pup-status { margin-top: 0.35rem; color: var(--cp-ivory); font-size: 0.9rem; }
+    .litter-video { aspect-ratio: 16 / 9; max-width: 900px; margin: 0 auto; background-color: var(--cp-gunmetal); }
+    .litter-video video { width: 100%; height: 100%; display: block; }
+    /* Dashed "photo coming" boxes — disappear once a real <img>/<video> replaces them */
+    .ph { display: flex; align-items: center; justify-content: center; text-align: center;
+          color: rgba(234,226,214,0.4); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+          border: 1px dashed rgba(181,135,57,0.35); padding: 1rem; }
   </style>
 </head>
 <body>
@@ -106,12 +121,117 @@
       <div></div>
     </div>
     <div class="litter-hero-content">
-      <span class="eyebrow">Upcoming Pairing</span>
+      <span class="eyebrow">Current Litter</span>
       <!-- REPLACE: Update sire × dam names -->
       <h1 style="font-size: 2.2rem;">Hercules &times; Mila</h1>
-      <p class="mb-3" style="color: var(--cp-gold); font-weight: 500;">Expected Summer 2026</p>
+      <p class="mb-3" style="color: var(--cp-gold); font-weight: 500;">Born August 12, 2026 &middot; 7 Puppies &middot; 4 Males &middot; 3 Females</p>
       <p>A deliberate pairing built to combine structural power with proven temperament and production quality.</p>
       <a href="contact.html" class="btn btn-primary mt-4">Inquire About This Litter</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE LITTER — photos, video, and the individual puppies
+       Photos live in images/litters/hercules-x-mila-2026/
+       Every dashed box below is a placeholder; each has a REPLACE
+       comment showing the exact line to swap in.
+       ============================================================ -->
+  <section class="section section-darker" id="the-litter">
+    <div class="container">
+      <div class="text-center animate">
+        <span class="eyebrow">Born August 12, 2026</span>
+        <h2>The Litter</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Seven puppies — four males and three females — arrived on August 12, 2026. Every one of them is being raised under the Crosspoint development protocol from day one.</p>
+      </div>
+
+      <!-- LITTER PHOTOS (group shots). Square tiles, 3 across. Add or remove tiles freely — the grid reflows.
+           Ideal size: 1000 x 1000. To add one:
+             <div class="dog-gallery-item"><img src="images/litters/hercules-x-mila-2026/litter-1.webp" alt="Hercules × Mila litter" loading="lazy" decoding="async" width="1000" height="1000"></div> -->
+      <h4 class="text-gold mt-5 mb-3 text-center">Litter Photos</h4>
+      <div class="dog-gallery animate">
+        <div class="dog-gallery-item ph">Litter photo 1</div>
+        <div class="dog-gallery-item ph">Litter photo 2</div>
+        <div class="dog-gallery-item ph">Litter photo 3</div>
+      </div>
+
+      <!-- VIDEO. Two options:
+           (a) Self-hosted MP4 — drop video-1.mp4 + video-poster.webp into the litter folder and replace the div with:
+                 <video controls preload="none" poster="images/litters/hercules-x-mila-2026/video-poster.webp" playsinline>
+                   <source src="images/litters/hercules-x-mila-2026/video-1.mp4" type="video/mp4">
+                 </video>
+               preload="none" matters — it keeps the video off the page load. Keep clips under ~20 MB.
+           (b) YouTube (unlisted) — better for long/large clips. Needs ONE line added to _headers
+               (frame-src, see the examples in that file), then replace the div with the YouTube
+               <iframe> using the youtube-nocookie.com embed URL. -->
+      <h4 class="text-gold mt-5 mb-3 text-center">Video</h4>
+      <div class="litter-video ph animate">Litter video</div>
+
+      <!-- INDIVIDUAL PUPPIES. 4:5 portrait cards, one puppy each.
+           Ideal photo size: 880 x 1100 (same as the adult dog cards). -->
+      <h4 class="text-gold mt-5 mb-3 text-center">Males</h4>
+      <div class="pup-grid animate animate-stagger">
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-1.webp" alt="Hercules × Mila male 1" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Male 1<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Male 1</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-2.webp" alt="Hercules × Mila male 2" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Male 2<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Male 2</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-3.webp" alt="Hercules × Mila male 3" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Male 3<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Male 3</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-4.webp" alt="Hercules × Mila male 4" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Male 4<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Male 4</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+      </div>
+
+      <h4 class="text-gold mt-5 mb-3 text-center">Females</h4>
+      <div class="pup-grid animate animate-stagger">
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-1.webp" alt="Hercules × Mila female 1" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Female 1<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Female 1</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-2.webp" alt="Hercules × Mila female 2" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Female 2<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Female 2</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+        <div class="pup-card">
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-3.webp" alt="Hercules × Mila female 3" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Female 3<br>photo</div>
+          <div class="pup-body">
+            <span class="card-tag">Female 3</span>   <!-- EDIT: name or collar colour -->
+            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
