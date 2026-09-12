@@ -70,8 +70,11 @@
     .pup-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .pup-body  { padding: 1rem 1.25rem; text-align: center; }
     .pup-status { margin-top: 0.35rem; color: var(--cp-ivory); font-size: 0.9rem; }
-    .litter-video { aspect-ratio: 16 / 9; max-width: 900px; margin: 0 auto; background-color: var(--cp-gunmetal); }
-    .litter-video video { width: 100%; height: 100%; display: block; }
+    /* Portrait (9:16) reels, three across to line up under the three litter photos */
+    .litter-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    @media (max-width: 768px) { .litter-videos { grid-template-columns: repeat(2, 1fr); } }
+    .litter-video { aspect-ratio: 9 / 16; background-color: var(--cp-gunmetal); overflow: hidden; }
+    .litter-video video { width: 100%; height: 100%; display: block; object-fit: cover; }
     /* Dashed "photo coming" boxes — disappear once a real <img>/<video> replaces them */
     .ph { display: flex; align-items: center; justify-content: center; text-align: center;
           color: rgba(234,226,214,0.4); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -155,17 +158,29 @@
         <div class="dog-gallery-item"><img src="images/litters/hercules-x-mila-2026/litter-3.webp" alt="New Beginnings, Chapter One, Day One — the seven Hercules × Mila puppies on their first day" loading="lazy" decoding="async" width="1000" height="1000"></div>
       </div>
 
-      <!-- VIDEO. Two options:
-           (a) Self-hosted MP4 — drop video-1.mp4 + video-poster.webp into the litter folder and replace the div with:
-                 <video controls preload="none" poster="images/litters/hercules-x-mila-2026/video-poster.webp" playsinline>
-                   <source src="images/litters/hercules-x-mila-2026/video-1.mp4" type="video/mp4">
-                 </video>
-               preload="none" matters — it keeps the video off the page load. Keep clips under ~20 MB.
-           (b) YouTube (unlisted) — better for long/large clips. Needs ONE line added to _headers
-               (frame-src, see the examples in that file), then replace the div with the YouTube
-               <iframe> using the youtube-nocookie.com embed URL. -->
-      <h4 class="text-gold mt-5 mb-3 text-center">Video</h4>
-      <div class="litter-video ph animate">Litter video</div>
+      <!-- VIDEOS. Self-hosted 9:16 reels from images/litters/hercules-x-mila-2026/.
+           preload="none" + a poster image means NOTHING downloads until someone presses play,
+           so these cost the page load zero bytes. Files are remuxed with the index at the front
+           (faststart) so playback starts before the file finishes downloading.
+           To add a fourth: copy one block, point it at video-4.mp4 + video-4-poster.webp. -->
+      <h4 class="text-gold mt-5 mb-3 text-center">Videos</h4>
+      <div class="litter-videos animate animate-stagger">
+        <div class="litter-video">
+          <video controls preload="none" playsinline poster="images/litters/hercules-x-mila-2026/video-1-poster.webp" aria-label="Mila nursing her seven puppies — growing beautifully">
+            <source src="images/litters/hercules-x-mila-2026/video-1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="litter-video">
+          <video controls preload="none" playsinline poster="images/litters/hercules-x-mila-2026/video-2-poster.webp" aria-label="Three weeks strong — the litter finding their feet">
+            <source src="images/litters/hercules-x-mila-2026/video-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="litter-video">
+          <video controls preload="none" playsinline poster="images/litters/hercules-x-mila-2026/video-3-poster.webp" aria-label="Three weeks old — first introduction to puppy mush">
+            <source src="images/litters/hercules-x-mila-2026/video-3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
 
       <!-- INDIVIDUAL PUPPIES. 4:5 portrait cards, one puppy each.
            Ideal photo size: 880 x 1100 (same as the adult dog cards). -->
