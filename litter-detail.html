@@ -69,7 +69,9 @@
     .pup-photo { aspect-ratio: 4 / 5; background-color: var(--cp-gunmetal); overflow: hidden; }
     .pup-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .pup-body  { padding: 1rem 1.25rem; text-align: center; }
-    .pup-status { margin-top: 0.35rem; color: var(--cp-ivory); font-size: 0.9rem; }
+    .pup-status { margin-top: 0.35rem; font-size: 0.9rem; color: var(--cp-ivory); }
+    .pup-status.available { color: var(--cp-gold); }
+    .pup-status.sold { color: rgba(234,226,214,0.55); }
     /* Portrait (9:16) reels, three across to line up under the three litter photos */
     .litter-videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
     @media (max-width: 768px) { .litter-videos { grid-template-columns: repeat(2, 1fr); } }
@@ -187,35 +189,35 @@
       <h4 class="text-gold mt-5 mb-3 text-center">Males</h4>
       <div class="pup-grid animate animate-stagger">
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-1.webp" alt="Hercules × Mila male 1" loading="lazy" decoding="async" width="880" height="1100"> -->
-          <div class="pup-photo ph">Male 1<br>photo</div>
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-1.webp" alt="Uriah — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Uriah<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Male 1</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Uriah</span>
+            <p class="pup-status sold">Sold</p>
           </div>
         </div>
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-2.webp" alt="Hercules × Mila male 2" loading="lazy" decoding="async" width="880" height="1100"> -->
-          <div class="pup-photo ph">Male 2<br>photo</div>
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-2.webp" alt="Oslo — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Oslo<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Male 2</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Oslo</span>
+            <p class="pup-status sold">Sold</p>
           </div>
         </div>
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-3.webp" alt="Hercules × Mila male 3" loading="lazy" decoding="async" width="880" height="1100"> -->
-          <div class="pup-photo ph">Male 3<br>photo</div>
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-3.webp" alt="Roscoe — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Roscoe<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Male 3</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Roscoe</span>
+            <p class="pup-status sold">Sold &middot; Going to Georgia</p>
           </div>
         </div>
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-4.webp" alt="Hercules × Mila male 4" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/male-4.webp" alt="Male 4 — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
           <div class="pup-photo ph">Male 4<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Male 4</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Male 4</span>
+            <p class="pup-status available">Available</p>
           </div>
         </div>
       </div>
@@ -223,27 +225,27 @@
       <h4 class="text-gold mt-5 mb-3 text-center">Females</h4>
       <div class="pup-grid animate animate-stagger">
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-1.webp" alt="Hercules × Mila female 1" loading="lazy" decoding="async" width="880" height="1100"> -->
-          <div class="pup-photo ph">Female 1<br>photo</div>
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-1.webp" alt="Nadia — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <div class="pup-photo ph">Nadia<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Female 1</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Nadia</span>
+            <p class="pup-status sold">Sold</p>
           </div>
         </div>
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-2.webp" alt="Hercules × Mila female 2" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-2.webp" alt="Female 2 — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
           <div class="pup-photo ph">Female 2<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Female 2</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Female 2</span>
+            <p class="pup-status available">Available</p>
           </div>
         </div>
         <div class="pup-card">
-          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-3.webp" alt="Hercules × Mila female 3" loading="lazy" decoding="async" width="880" height="1100"> -->
+          <!-- REPLACE the div below with:  <img src="images/litters/hercules-x-mila-2026/female-3.webp" alt="Female 3 — Hercules × Mila litter" loading="lazy" decoding="async" width="880" height="1100"> -->
           <div class="pup-photo ph">Female 3<br>photo</div>
           <div class="pup-body">
-            <span class="card-tag">Female 3</span>   <!-- EDIT: name or collar colour -->
-            <p class="pup-status">Available</p>                <!-- EDIT: Available / Reserved -->
+            <span class="card-tag">Female 3</span>
+            <p class="pup-status available">Available</p>
           </div>
         </div>
       </div>
