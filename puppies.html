@@ -17,6 +17,20 @@
 
   <meta name="description" content="View available Rottweiler puppies from Crosspoint. Reserve with a deposit or purchase outright. Every puppy is purpose-bred, health-tested, and raised to the Crosspoint standard.">
   <link rel="stylesheet" href="style.css?v=9">
+  <style>
+    /* Available-puppy cards — same look as the puppy cards on litter-detail.html.
+       Three across here (rather than four) because only the available pups are
+       listed; two across on phones. */
+    .pup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); max-width: 900px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 768px) { .pup-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; } }
+    .pup-card  { background-color: var(--cp-charcoal); overflow: hidden; }
+    .pup-photo { aspect-ratio: 4 / 5; background-color: var(--cp-gunmetal); overflow: hidden; }
+    .pup-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: var(--transition-slow); }
+    .pup-card:hover .pup-photo img { transform: scale(1.04); }
+    .pup-body  { padding: 1rem 1.25rem; text-align: center; }
+    .pup-status { margin-top: 0.35rem; font-size: 0.9rem; color: var(--cp-gold); }
+    .pup-sex { display: block; margin-top: 0.15rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(234,226,214,0.45); }
+  </style>
 </head>
 <body class="has-hero-banner">
 <!-- Icon sprite (replaces the full Font Awesome bundle: ~140KB -> ~2KB, no extra request).
@@ -63,13 +77,63 @@
     </picture>
   </section>
 
+
+  <!-- ============================================================
+       AVAILABLE NOW — the actual puppies, first thing on the page.
+       KEEP IN SYNC with the puppy cards on litter-detail.html: when one
+       sells, remove its card here and update its status there.
+       If none are available, delete this whole section; the litter cards
+       below still tell the story.
+       ============================================================ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="text-center animate">
+        <span class="eyebrow">Available Now</span>
+        <h2>Ready to Reserve</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Three puppies from our Hercules &times; Mila litter, born August 12, 2026 and pictured at five weeks. Tap any puppy to meet the whole litter.</p>
+      </div>
+
+      <div class="pup-grid mt-5 animate animate-stagger">
+          <a href="litter-detail.html#the-litter" class="pup-card">
+            <div class="pup-photo"><img src="images/litters/hercules-x-mila-2026/oslo.webp" alt="Crosspoint's Oslo at five weeks — available Hercules × Mila puppy" loading="lazy" decoding="async" width="880" height="1100"></div>
+            <div class="pup-body">
+              <span class="card-tag">Oslo</span>
+              <p class="pup-status">Available</p>
+              <span class="pup-sex">Male</span>
+            </div>
+          </a>
+          <a href="litter-detail.html#the-litter" class="pup-card">
+            <div class="pup-photo"><img src="images/litters/hercules-x-mila-2026/dahlia.webp" alt="Crosspoint's Dahlia at five weeks — available Hercules × Mila puppy" loading="lazy" decoding="async" width="880" height="1100"></div>
+            <div class="pup-body">
+              <span class="card-tag">Dahlia</span>
+              <p class="pup-status">Available</p>
+              <span class="pup-sex">Female</span>
+            </div>
+          </a>
+          <a href="litter-detail.html#the-litter" class="pup-card">
+            <div class="pup-photo"><img src="images/litters/hercules-x-mila-2026/pickle.webp" alt="Crosspoint's Pickle at five weeks — available Hercules × Mila puppy" loading="lazy" decoding="async" width="880" height="1100"></div>
+            <div class="pup-body">
+              <span class="card-tag">Pickle</span>
+              <p class="pup-status">Available</p>
+              <span class="pup-sex">Female</span>
+            </div>
+          </a>
+      </div>
+
+      <div class="text-center mt-5 animate">
+        <a href="contact.html" class="btn btn-primary">Inquire About a Puppy</a>
+      </div>
+    </div>
+  </section>
+
   <!-- UPCOMING & PLANNED LITTERS -->
   <section class="section section-darker">
     <div class="container">
       <div class="text-center animate">
         <span class="eyebrow">Reservations Open</span>
         <h2>Current &amp; Planned Litters</h2>
-        <p class="section-subtitle">Our Hercules &times; Mila litter has arrived &mdash; seven puppies, photographed and named. <strong>Three are still available.</strong> Open a litter below to meet each puppy individually.</p>
+        <p class="section-subtitle">The litters behind those puppies &mdash; and what is planned next.</p>
       </div>
 
       <div class="grid-2 mt-5 animate animate-stagger" style="max-width: 940px; margin-left: auto; margin-right: auto;">
