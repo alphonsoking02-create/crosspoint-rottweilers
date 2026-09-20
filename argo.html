@@ -61,6 +61,17 @@
       background-image: url('images/dogs/argo-hero-5mo.webp'),
                         url('data:image/webp;base64,UklGRqgCAABXRUJQVlA4IJwCAABwDQCdASosADcAPp1Amkklo6IhMBK8ALATiWgArDOYBEesPRYTfprkCieWmYNwgGU8WMWR/QiL3n75uElE0XC2LRR4r+QJyni0un7UqYhViW9ra5U5V0KF32TgZ7ev7zI+8JfrCRx/NYBQIu8L0tCnPN3qAAD+4IymhwtrylwyV0QVWmH2qx3OcEvhP6NbLnY4AzplmzyffIH1sd+jXQtDydqfCQUp6/6n1yEA8W74RB+LzYVJH8Ezxf4dSqk+EJM8AE1KDqHJ25IOoljSsoOeNdMDuIYfmozs75NcxfNxMs+OsPNJozgRrt6uq8TulkzWuSxzCLYpjjUqeR/yVWQJmn7JYxnv1Mn/mBuyDcJBCppYmAJpNsTcNOO1XJBz2WHejwmrVadwTLfeCqKQXE+dihQIjsGQ+XRP++j6vcaOqQ7qxoFAeSXxHYfQtN6l7i9DOEldPpjIvrTFHDTOYcdCFkWn/nU+eiR5mSDVZtVMqAn7eOb7e3GkVgpbpf5LXr5kiODORy5WxNFjkP/YkmtAyXFy/csgmwdaTXMfu4/q/cuSEWGvTbNMH5w7RdFDrvFwzL5HqcaNPMMqV6jLRGYBjP+wpkh4qZSL0ypflUincjYAu26Xwm6Wy6/FTNvTsDluzyqTdImwjpdG5TKdSxLDk2KunNM9t+MovKeJNfqSTCiO64m36UWwzrluURIOk46A51WNg0+LYcOvniBTLzeO1F9pX75gQxl2zzvs5XJZTOgtpRoMBeBVJztaM2cKgaYinEE5Um2vAz35Pl57RoWJ3G1NkgiOz6t1gxWyJIphE4GCtDqoJdofg5wKPROiLCpHFYjtf79wyFj7RE/FyX6Wgtb1KpGIhDo3z0sPL5qOgaBqwxrO1dVG+zAAAA==');
     }
+
+    /* THEN & NOW — growth pair above the gallery. 4:5 tiles: the 5-month photo fits
+       natively and the 8-week landscape centre-crops to just the puppy. */
+    .then-now { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); max-width: 720px; margin: 0 auto; }
+    .then-now figure { margin: 0; }
+    .then-now .tn-img { aspect-ratio: 4 / 5; overflow: hidden; background-color: var(--cp-gunmetal); }
+    .then-now .tn-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .then-now figcaption { text-align: center; padding-top: 0.75rem; }
+    .then-now .tn-label { display: block; font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cp-gold); }
+    .then-now .tn-age { display: block; margin-top: 0.2rem; font-family: var(--font-heading); font-size: 1.15rem; color: var(--cp-ivory); }
+    @media (max-width: 768px) { .then-now { gap: 0.75rem; } }
   </style>
 </head>
 <body>
@@ -212,8 +223,21 @@
       <div class="text-center animate">
         <span class="eyebrow">Gallery</span>
         <h2>Argo</h2>
-        <p class="section-subtitle">Updated photos coming as he grows. <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" style="color: var(--cp-gold); text-decoration: underline;">Follow along on Instagram</a> for ongoing updates.</p>
+        <p class="section-subtitle">Watch him grow. <a href="https://www.instagram.com/alphonsoking02" target="_blank" rel="noopener" style="color: var(--cp-gold); text-decoration: underline;">Follow along on Instagram</a> for ongoing updates.</p>
       </div>
+      <!-- THEN & NOW — his 8-week arrival photo beside the 5-month stack. When the next
+           photo comes in, move today's "Now" into a third tile or replace it. -->
+      <div class="then-now mt-5 animate animate-stagger">
+        <figure>
+          <div class="tn-img"><img src="images/dogs/argo-hero.webp" alt="Crosspoint's Argo at eight weeks" loading="lazy" decoding="async" width="1402" height="1122"></div>
+          <figcaption><span class="tn-label">Then</span><span class="tn-age">8 Weeks</span></figcaption>
+        </figure>
+        <figure>
+          <div class="tn-img"><img src="images/dogs/argo-hero-5mo.webp" alt="Crosspoint's Argo at five months" loading="lazy" decoding="async" width="1122" height="1402"></div>
+          <figcaption><span class="tn-label">Now</span><span class="tn-age">5 Months</span></figcaption>
+        </figure>
+      </div>
+
       <div class="dog-gallery mt-5 animate">
         <div class="dog-gallery-item"><img src="images/dogs/argo-g1.webp" alt="Crosspoint's Argo" loading="lazy" decoding="async" width="1402" height="1122"></div>
         <div class="dog-gallery-item"><img src="images/dogs/argo-lacky.webp?v=2" alt="Lacky von der Obersten — Argo's sire" loading="lazy" decoding="async" width="1484" height="1484"></div>
