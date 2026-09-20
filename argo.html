@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Preload LCP hero (CSS backgrounds are discovered late) -->
-  <link rel="preload" as="image" href="images/dogs/argo-hero.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/dogs/argo-hero-5mo.webp" fetchpriority="high">
   <title>Crosspoint's Argo | Crosspoint Rottweilers — Future Stud</title>
   <!-- Favicon (Crosspoint crest) -->
   <link rel="icon" href="favicon.ico?v=2" sizes="any">
@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="manifest" href="site.webmanifest">
 
-  <meta name="description" content="Crosspoint's Argo — future stud and the next generation of the Crosspoint Rottweiler program. Currently eight weeks young, raised to carry the standard forward.">
+  <meta name="description" content="Crosspoint's Argo — future stud and the next generation of the Crosspoint Rottweiler program. Now five months old and raised to carry the standard forward.">
   <link rel="stylesheet" href="style.css?v=9">
   <style>
     /* Scoped to argo.html only — all changes here are local to this page */
@@ -32,11 +32,13 @@
     /* Hero photo + dark gradient overlay at top so nav blends in cleanly */
     .dog-hero-image {
       position: relative;
-      /* Lock the slot to a true 5:4 shape so a 1400x1120 photo shows in full —
-         no part of the dog or ball is ever cropped, on any screen. */
+      /* Argo's hero is a 4:5 PORTRAIT (his 5-month stack photo, 1122x1402), unlike
+         the other profiles' 5:4 landscapes. The slot is locked to the photo's own
+         shape so the whole dog shows in full on every screen — same principle as
+         the other pages, different ratio. */
       height: auto;
       min-height: 0;
-      aspect-ratio: 5 / 4;
+      aspect-ratio: 4 / 5;
       background-size: cover;
       background-position: center;
     }
@@ -56,8 +58,8 @@
        soon as it arrives. Regenerate: shrink to ~44px wide, GaussianBlur(0.6),
        WebP q70, base64. */
     .dog-hero-image {
-      background-image: url('images/dogs/argo-hero.webp'),
-                        url('data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwCACdASosACMAPpk+mkgloyKhLjgMyLATCWIAyYXAvyv3HA0IlPDD8iobWCuc36nvsaiR+lITAIjG6bwAvU42DrCpGNAMxbhkAwYSFfwi4AD++v9MVMto6rNLfJJtFDQiMWyD+qkyxFW5ywTq0pyR72dW7kZimMKywl2h2xhL3bP9zMCre7BreBEJIWZKD0NoNdE1wPFlr4swnihgeB0es6dajq2kY6Mo9vd/0MdcBX3s19gy3gxtdCuq1K0W4Q2YxBJ5c8jvIOzUJdEfCGkL6+E9ApHiZYmfwEOQxGs/k6oiUP8bmoo7qmJk53o+9pgk+HZ1GF2ZkCRGyOsiZbVgvZt0wXYpa8yH6if+73orsYxDD9yC6/kl9nSpo+MWXHYOcXU3ELLW6qIRkk/UYYfJrCdcmF1QxgiaemRBtM4srfHiN/btVYS+nQAAAA==');
+      background-image: url('images/dogs/argo-hero-5mo.webp'),
+                        url('data:image/webp;base64,UklGRqgCAABXRUJQVlA4IJwCAABwDQCdASosADcAPp1Amkklo6IhMBK8ALATiWgArDOYBEesPRYTfprkCieWmYNwgGU8WMWR/QiL3n75uElE0XC2LRR4r+QJyni0un7UqYhViW9ra5U5V0KF32TgZ7ev7zI+8JfrCRx/NYBQIu8L0tCnPN3qAAD+4IymhwtrylwyV0QVWmH2qx3OcEvhP6NbLnY4AzplmzyffIH1sd+jXQtDydqfCQUp6/6n1yEA8W74RB+LzYVJH8Ezxf4dSqk+EJM8AE1KDqHJ25IOoljSsoOeNdMDuIYfmozs75NcxfNxMs+OsPNJozgRrt6uq8TulkzWuSxzCLYpjjUqeR/yVWQJmn7JYxnv1Mn/mBuyDcJBCppYmAJpNsTcNOO1XJBz2WHejwmrVadwTLfeCqKQXE+dihQIjsGQ+XRP++j6vcaOqQ7qxoFAeSXxHYfQtN6l7i9DOEldPpjIvrTFHDTOYcdCFkWn/nU+eiR5mSDVZtVMqAn7eOb7e3GkVgpbpf5LXr5kiODORy5WxNFjkP/YkmtAyXFy/csgmwdaTXMfu4/q/cuSEWGvTbNMH5w7RdFDrvFwzL5HqcaNPMMqV6jLRGYBjP+wpkh4qZSL0ypflUincjYAu26Xwm6Wy6/FTNvTsDluzyqTdImwjpdG5TKdSxLDk2KunNM9t+MovKeJNfqSTCiO64m36UWwzrluURIOk46A51WNg0+LYcOvniBTLzeO1F9pX75gQxl2zzvs5XJZTOgtpRoMBeBVJztaM2cKgaYinEE5Um2vAz35Pl57RoWJ3G1NkgiOz6t1gxWyJIphE4GCtDqoJdofg5wKPROiLCpHFYjtf79wyFj7RE/FyX6Wgtb1KpGIhDo3z0sPL5qOgaBqwxrO1dVG+zAAAA==');
     }
   </style>
 </head>
@@ -103,7 +105,7 @@
     <div class="dog-hero-content">
       <span class="eyebrow">Future Stud &bull; Next Generation</span>
       <h1>Crosspoint's Argo</h1>
-      <p>The next generation of the Crosspoint program. A full brother to our foundation male Hercules — the same Lacky von der Obersten &times; Xtra von der Obersten breeding, repeated — Argo is being raised under our full development protocol: early neurological stimulation, structured socialization, and individual assessment from day one. As he matures, he will be evaluated against the standard before being introduced into the breeding program.</p>
+      <p>The next generation of the Crosspoint program. A full brother to our foundation male Hercules — the same Lacky von der Obersten &times; Xtra von der Obersten breeding, repeated — Argo is five months old and being raised under our full development protocol: early neurological stimulation, structured socialization, and individual assessment from day one. As he matures, he will be evaluated against the standard before being introduced into the breeding program.</p>
 
       <div class="dog-stats">
         <div class="dog-stat">
@@ -155,12 +157,16 @@
               <p style="color: var(--cp-ivory);">Early neurological stimulation &amp; first socialization</p>
             </div>
             <div class="mb-4">
-              <p class="dog-stat-label">8 Weeks — Now</p>
+              <p class="dog-stat-label">8 Weeks &ndash; 4 Months</p>
               <p style="color: var(--cp-ivory);">Structured exposure, environmental enrichment, individual assessment</p>
             </div>
             <div class="mb-4">
-              <p class="dog-stat-label">6–12 Months</p>
-              <p style="color: var(--cp-ivory);">Structural evaluation, working assessment, training foundation</p>
+              <p class="dog-stat-label">5 Months &mdash; Now</p>
+              <p style="color: var(--cp-ivory);">Structural evaluation underway, working assessment, training foundation</p>
+            </div>
+            <div class="mb-4">
+              <p class="dog-stat-label">6&ndash;12 Months</p>
+              <p style="color: var(--cp-ivory);">Continued structural and temperament evaluation as he matures</p>
             </div>
             <div>
               <p class="dog-stat-label">18+ Months</p>
